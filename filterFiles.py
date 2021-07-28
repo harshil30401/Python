@@ -2,8 +2,8 @@ import time, os
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-folder_to_track = r"C:\Users\DELL\Desktop\test1"
-folder_dest = r"C:\Users\DELL\Desktop\test2"
+folder_to_track = " " 
+folder_dest = " "
 
 class Handler(FileSystemEventHandler):
     
@@ -13,8 +13,9 @@ class Handler(FileSystemEventHandler):
             new_dest = folder_dest+ "/"+filename  
             s = str(filename)
             if(s.endswith(".jpg") or s.endswith(".jpeg")):
-                print(filename+" has been moved to "+folder_dest)
                 os.rename(src, new_dest)
+                print(filename+" has been moved to "+folder_dest)
+                
 
 observer = Observer()
 eventHandler = Handler()
