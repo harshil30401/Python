@@ -1,1 +1,1 @@
-Small python projects i've worked on
+Small python projects I've worked on
