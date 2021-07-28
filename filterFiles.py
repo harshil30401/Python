@@ -1,3 +1,6 @@
+# Moves the required files in a specified folder automatically
+
+
 import time, os
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
