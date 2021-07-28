@@ -1,4 +1,5 @@
-from KITT import send_email
+# Notifies via email whenever the price of a particular product at amazon falls
+
 import requests
 from bs4 import BeautifulSoup
 import time
