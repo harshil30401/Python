@@ -2,19 +2,19 @@ import time, os
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-folder_to_track = " " 
-folder_dest = " "
+path_source = " " 
+path_destination = " "
 
 class Handler(FileSystemEventHandler):
     
     def on_modified(self, event):
-        for filename in os.listdir(folder_to_track):
-            src = folder_to_track+ "/" +filename
-            new_dest = folder_dest+ "/"+filename  
+        for filename in os.listdir(path_source):
+            src = path_source+ "/" +filename
+            new_dest = path_destination+ "/"+filename  
             s = str(filename)
             if(s.endswith(".jpg") or s.endswith(".jpeg")):
                 os.rename(src, new_dest)
-                print(filename+" has been moved to "+folder_dest)
+                print(filename+" has been moved to "+path_destination)
                 
 
 observer = Observer()
